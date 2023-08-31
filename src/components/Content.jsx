@@ -1,7 +1,7 @@
-import About from "./About";
-import Shop from "./Shop";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import About from "./pages/About";
+import Shop from "./pages/Shop";
 
 const Content = () => {
   const { name } = useParams();
@@ -19,7 +19,15 @@ const Content = () => {
   }, []);
   console.log(productList);
   return (
-    <>{name === "shop" ? "shop" : name === "about" ? "about" : "default"}</>
+    <>
+      {name === "shop" ? (
+        <Shop productList={productList} />
+      ) : name === "about" ? (
+        <About />
+      ) : (
+        "default"
+      )}
+    </>
   );
 };
 

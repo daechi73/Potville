@@ -26,4 +26,5 @@
 }
 .shopBtn:hover {
   border-color: #535bf2;
+  border-width: 2px;
 }

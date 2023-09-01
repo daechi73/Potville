@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
+import Home from "./pages/Home";
 
 const Content = () => {
   const { name } = useParams();
@@ -25,7 +26,7 @@ const Content = () => {
       ) : name === "about" ? (
         <About />
       ) : (
-        "default"
+        <Home />
       )}
     </>
   );

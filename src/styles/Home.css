@@ -1,0 +1,7 @@
+.homeMainImg {
+  max-width: 65%;
+}
+.home {
+  display: flex;
+  justify-content: center;
+}

@@ -1,5 +1,5 @@
 import Image from "../Image";
-import img2 from "../../assets/img2.jpg";
+import img2 from "../../assets/img.avif";
 import "../../styles/Home.css";
 
 const Home = () => {

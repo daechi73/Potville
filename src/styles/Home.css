@@ -1,5 +1,6 @@
 .homeMainImg {
-  max-width: 65%;
+  height: 550px;
+  width: 1285px;
 }
 .home {
   display: flex;

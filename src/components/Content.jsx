@@ -10,23 +10,42 @@ const Content = () => {
   const [productList, setProductList] = useState([]);
   const [dataFetch, setDataFetch] = useState(false);
 
+  const renderShop = () => {
+    const namesToPass = [
+      "shop",
+      "jewelery",
+      "electronics",
+      "women's clothing",
+      "men's clothing",
+    ];
+    for (const paramName of namesToPass) {
+      if (name === paramName) return true;
+    }
+    return false;
+  };
+
   const dataFetchSwitch = () => {
     setDataFetch(!dataFetch);
   };
 
+  const getURL = () => {
+    let url;
+    name === "electronics"
+      ? (url = "category/electronics")
+      : name === "jewelery"
+      ? (url = "category/jewelery")
+      : name === "men's clothing"
+      ? (url = "category/men's%20clothing")
+      : name === "women's clothing"
+      ? (url = "category/women's%20clothing")
+      : (url = "");
+    return url;
+  };
+
   useEffect(() => {
     const dataFetch = (() => {
-      let url;
-      name === "electronics"
-        ? (url = "/products/category/electronics")
-        : name === "jewelery"
-        ? (url = "/products/category/jewelery")
-        : name === "men's clothing"
-        ? (url = "/products/category/men's%20clothing")
-        : name === "women's clothing"
-        ? (url = "/products/category/women's%20clothing")
-        : (url = "/products/");
-      fetch("https://fakestoreapi.com" + url)
+      const url = getURL();
+      fetch("https://fakestoreapi.com/products/" + url)
         .then((res) => res.json())
         .then((json) => {
           const dataList = json;
@@ -35,14 +54,10 @@ const Content = () => {
         });
     })();
   }, [dataFetch]);
-  console.log(name);
+  //console.log(name);
   return (
     <>
-      {name === "shop" ||
-      name === "electronics" ||
-      name === "jewelery" ||
-      name === "women's clothing" ||
-      name === "men's clothing" ? (
+      {renderShop() ? (
         <Shop productList={productList} dataFetchSwitch={dataFetchSwitch} />
       ) : name === "about" ? (
         <About />

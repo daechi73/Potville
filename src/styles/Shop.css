@@ -1,0 +1,5 @@
+.product-category a,
+li {
+  text-decoration: none;
+  list-style-type: none;
+}

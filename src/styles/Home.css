@@ -24,6 +24,7 @@
   cursor: pointer;
   transition: border-color 0.25s;
   text-decoration: none;
+  list-style-type: none;
 }
 .shopBtn:hover {
   border-color: #535bf2;

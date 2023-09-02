@@ -9,6 +9,7 @@ function App() {
   const dataFetchSwitch = () => {
     setDataFetch(!dataFetch);
   };
+  console.log("renderingAPP");
   return (
     <>
       <Header dataFetchSwitch={dataFetchSwitch} />

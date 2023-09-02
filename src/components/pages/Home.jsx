@@ -15,7 +15,9 @@ const Home = () => {
           <summary className="home-quote">
             Where Urban style comes alive
           </summary>
-          <Link to="/shop">Shop</Link>
+          <Link className="shopBtn" to="/shop">
+            Shop
+          </Link>
         </section>
       </main>
     </>

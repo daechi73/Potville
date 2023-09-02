@@ -5,6 +5,7 @@ import Shop from "./pages/Shop";
 import Home from "./pages/Home";
 
 const Content = () => {
+  window.scrollTo(0, 0);
   const { name } = useParams();
   const [productList, setProductList] = useState([]);
   useEffect(() => {
@@ -18,7 +19,7 @@ const Content = () => {
         });
     })();
   }, []);
-  console.log(productList);
+
   return (
     <>
       {name === "shop" ? (

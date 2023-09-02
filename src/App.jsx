@@ -5,10 +5,14 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 
 function App() {
+  const [dataFetch, setDataFetch] = useState(false);
+  const dataFetchSwitch = () => {
+    setDataFetch(!dataFetch);
+  };
   return (
     <>
-      <Header />
-      <Content />
+      <Header dataFetchSwitch={dataFetchSwitch} />
+      <Content dataFetchSwitch={dataFetchSwitch} dataFetch={dataFetch} />
       <Footer />
     </>
   );

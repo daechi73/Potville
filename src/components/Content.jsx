@@ -4,11 +4,10 @@ import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Home from "./pages/Home";
 
-const Content = () => {
+const Content = (props) => {
   window.scrollTo(0, 0);
   const { name } = useParams();
   const [productList, setProductList] = useState([]);
-  const [dataFetch, setDataFetch] = useState(false);
 
   const renderShop = () => {
     const namesToPass = [
@@ -22,10 +21,6 @@ const Content = () => {
       if (name === paramName) return true;
     }
     return false;
-  };
-
-  const dataFetchSwitch = () => {
-    setDataFetch(!dataFetch);
   };
 
   const getURL = () => {
@@ -53,16 +48,19 @@ const Content = () => {
           setProductList(dataList);
         });
     })();
-  }, [dataFetch]);
+  }, [props.dataFetch]);
   //console.log(name);
   return (
     <>
       {renderShop() ? (
-        <Shop productList={productList} dataFetchSwitch={dataFetchSwitch} />
+        <Shop
+          productList={productList}
+          dataFetchSwitch={props.dataFetchSwitch}
+        />
       ) : name === "about" ? (
         <About />
       ) : (
-        <Home />
+        <Home dataFetchSwitch={props.dataFetchSwitch} />
       )}
     </>
   );

@@ -6,7 +6,7 @@ import imgCut from "../../assets/imgCut.jpg";
 import "../../styles/Home.css";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <>
       <main className="home">
@@ -15,7 +15,7 @@ const Home = () => {
           <summary className="home-quote">
             Where Urban style comes alive
           </summary>
-          <Link className="shopBtn" to="/shop">
+          <Link className="shopBtn" to="/shop" onClick={props.dataFetchSwitch}>
             Shop
           </Link>
         </section>

@@ -8,9 +8,25 @@ const Content = () => {
   window.scrollTo(0, 0);
   const { name } = useParams();
   const [productList, setProductList] = useState([]);
+  const [dataFetch, setDataFetch] = useState(false);
+
+  const dataFetchSwitch = () => {
+    setDataFetch(!dataFetch);
+  };
+
   useEffect(() => {
     const dataFetch = (() => {
-      fetch("https://fakestoreapi.com/products/")
+      let url;
+      name === "electronics"
+        ? (url = "/products/category/electronics")
+        : name === "jewelery"
+        ? (url = "/products/category/jewelery")
+        : name === "men's clothing"
+        ? (url = "/products/category/men's%20clothing")
+        : name === "women's clothing"
+        ? (url = "/products/category/women's%20clothing")
+        : (url = "/products/");
+      fetch("https://fakestoreapi.com" + url)
         .then((res) => res.json())
         .then((json) => {
           const dataList = json;
@@ -18,12 +34,16 @@ const Content = () => {
           setProductList(dataList);
         });
     })();
-  }, []);
-
+  }, [dataFetch]);
+  console.log(name);
   return (
     <>
-      {name === "shop" ? (
-        <Shop productList={productList} />
+      {name === "shop" ||
+      name === "electronics" ||
+      name === "jewelery" ||
+      name === "women's clothing" ||
+      name === "men's clothing" ? (
+        <Shop productList={productList} dataFetchSwitch={dataFetchSwitch} />
       ) : name === "about" ? (
         <About />
       ) : (

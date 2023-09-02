@@ -31,3 +31,8 @@ li {
   justify-content: center;
   gap: 30px;
 }
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

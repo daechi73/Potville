@@ -49,7 +49,8 @@ const Content = (props) => {
         });
     })();
   }, [props.dataFetch]);
-  //console.log(name);
+  console.log("renderingContent");
+
   return (
     <>
       {renderShop() ? (

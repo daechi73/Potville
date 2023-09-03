@@ -1,12 +1,13 @@
 import "../styles/ProductCard.css";
+import Image from "./Image";
 
 const ProductCard = (props) => {
   return (
     <>
-      <img
+      <Image
         className="card-img"
-        src={props.product.image}
-        alt={props.product.title}
+        image={props.product.image}
+        name={props.product.title}
       />
     </>
   );

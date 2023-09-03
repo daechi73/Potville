@@ -1,3 +1,5 @@
+import "../styles/Image.css";
+
 const Image = (props) => {
   return (
     <>

@@ -1,4 +1,13 @@
-.card-img {
-  height: 300px;
-  width: 300px;
+.productCard {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border-radius: 8px;
+}
+.productCard-infos {
+  margin-top: 20px;
+}
+.productCard-name {
+  font-weight: bold;
 }

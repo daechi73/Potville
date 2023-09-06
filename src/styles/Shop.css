@@ -12,12 +12,13 @@ li {
 }
 .shop {
   display: flex;
-  height: 100%;
+  min-height: 100%;
 }
 .productNav {
   display: flex;
   flex-direction: column;
   margin-top: 60px;
+  padding: 0 50px 0 0;
 }
 .category-title {
   padding-left: 40px;
@@ -34,5 +35,9 @@ li {
 .productList {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 80px;
+  background-color: white;
+  min-height: 100%;
+  padding: 50px;
+  justify-content: center;
 }

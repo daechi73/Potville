@@ -3,6 +3,17 @@ import Image from "./Image";
 
 const ProductCard = (props) => {
   console.log(props.product);
+  const reviewStars = () => {
+    const reviewStars = [];
+    for (let i = 0; i < Math.floor(props.product.rating.rate); i++) {
+      const star = <span className="fa fa-star checked"></span>;
+      reviewStars.push(star);
+    }
+    if (props.product.rating.rate % 1 !== 0)
+      reviewStars.push(<span className="fa fa-star"></span>);
+    return reviewStars;
+  };
+
   return (
     <div className="productCard">
       <Image
@@ -22,6 +33,7 @@ const ProductCard = (props) => {
         <div className="productCard-rating productCard-info">
           Rating: {props.product.rating.rate}
         </div>
+        {reviewStars()}
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import Image from "./Image";
 const ProductCard = (props) => {
   //console.log(props.product);
   const [itemQuantity, setItemQuantity] = useState(0);
-  let productId = 0;
 
   const reviewStars = () => {
     const reviewStars = [];
@@ -52,10 +51,10 @@ const ProductCard = (props) => {
         <span className="decrementQuan" onClick={itemQuantityAdjuster}>
           -
         </span>
-        <span className="quantity" onClick={itemQuantityAdjuster}>
-          {itemQuantity}
+        <span className="quantity">{itemQuantity}</span>
+        <span className="incrementQuan" onClick={itemQuantityAdjuster}>
+          +
         </span>
-        <span className="incrementQuan">+</span>
       </div>
       <button className="addToCartBtn">Add to Cart</button>
     </div>

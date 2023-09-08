@@ -30,6 +30,7 @@ const ProductCard = (props) => {
   };
 
   const addItemToCart = () => {
+    if (itemQuantity === 0) return alert("Cannot add 0 quantity of this item");
     let found = false;
     let cartTemp = props.cart.map((cartProduct) => {
       if (cartProduct.id === props.product.id) {

@@ -24,7 +24,9 @@ const ProductCard = (props) => {
 
   const itemQuantityAdjuster = (e) => {
     if (e.target.textContent === "+") setItemQuantity(itemQuantity + 1);
-    if (e.target.textContent === "-") setItemQuantity(itemQuantity - 1);
+    if (e.target.textContent === "-")
+      if (itemQuantity === 0) return;
+      else setItemQuantity(itemQuantity - 1);
   };
 
   const addItemToCart = () => {

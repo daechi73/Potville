@@ -64,7 +64,7 @@ const Content = (props) => {
       ) : name === "about" ? (
         <About />
       ) : name === "cart" ? (
-        <Cart />
+        <Cart cart={props.cart} setCart={props.setCart} />
       ) : (
         <Home dataFetchSwitch={props.dataFetchSwitch} />
       )}

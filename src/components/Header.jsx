@@ -18,6 +18,11 @@ const Header = (props) => {
           <li>
             <Link to="/about">About</Link>
           </li>
+          <li>
+            <Link to="/cart">
+              <i class="fa fa-shopping-cart"></i>
+            </Link>
+          </li>
         </ul>
       </header>
     </>

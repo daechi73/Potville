@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Home from "./pages/Home";
+import Cart from "./pages/Cart";
 
 const Content = (props) => {
   window.scrollTo(0, 0);
@@ -60,6 +61,8 @@ const Content = (props) => {
         />
       ) : name === "about" ? (
         <About />
+      ) : name === "cart" ? (
+        <Cart />
       ) : (
         <Home dataFetchSwitch={props.dataFetchSwitch} />
       )}

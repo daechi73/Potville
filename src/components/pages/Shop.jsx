@@ -44,7 +44,15 @@ const Shop = (props) => {
         </nav>
         <section className="productList">
           {props.productList.map((product) => {
-            return <ProductCard key={product.id} product={product} />;
+            return (
+              <ProductCard
+                key={product.id}
+                productId={product.id}
+                product={product}
+                cart={props.cart}
+                setCart={props.setCart}
+              />
+            );
           })}
         </section>
       </section>

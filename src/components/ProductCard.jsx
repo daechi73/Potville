@@ -36,6 +36,7 @@ const ProductCard = (props) => {
         </div>
         {reviewStars()}
       </div>
+      <button className="addToCartBtn">Add to Cart</button>
     </div>
   );
 };

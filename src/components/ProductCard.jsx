@@ -11,6 +11,7 @@ const ProductCard = (props) => {
     }
     if (props.product.rating.rate % 1 !== 0)
       reviewStars.push(<span className="fa fa-star"></span>);
+    reviewStars.push(<span>{props.product.rating.count}</span>);
     return reviewStars;
   };
 

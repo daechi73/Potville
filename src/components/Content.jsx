@@ -9,6 +9,7 @@ const Content = (props) => {
   window.scrollTo(0, 0);
   const { name } = useParams();
   const [productList, setProductList] = useState([]);
+  const [cart, setCart] = useState([]);
 
   const renderShop = () => {
     const namesToPass = [
@@ -58,6 +59,8 @@ const Content = (props) => {
         <Shop
           productList={productList}
           dataFetchSwitch={props.dataFetchSwitch}
+          cart={cart}
+          setCart={setCart}
         />
       ) : name === "about" ? (
         <About />

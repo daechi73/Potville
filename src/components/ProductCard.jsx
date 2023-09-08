@@ -34,7 +34,10 @@ const ProductCard = (props) => {
     let cartTemp = props.cart.map((cartProduct) => {
       if (cartProduct.id === props.product.id) {
         found = true;
-        return { ...props.product, quantity: itemQuantity };
+        return {
+          ...cartProduct,
+          quantity: cartProduct.quantity + itemQuantity,
+        };
       } else return cartProduct;
     });
     if (found === false) {

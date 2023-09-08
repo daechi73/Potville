@@ -44,6 +44,7 @@ const ProductCard = (props) => {
     if (found === false) {
       cartTemp.push({ ...props.product, quantity: itemQuantity });
     }
+    setItemQuantity(0);
     props.setCart(cartTemp);
     console.log(cartTemp);
   };

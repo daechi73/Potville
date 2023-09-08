@@ -26,6 +26,22 @@ const ProductCard = (props) => {
     if (e.target.textContent === "+") setItemQuantity(itemQuantity + 1);
     if (e.target.textContent === "-") setItemQuantity(itemQuantity - 1);
   };
+
+  const addItemToCart = () => {
+    let found = false;
+    let cartTemp = props.cart.map((cartProduct) => {
+      if (cartProduct.id === props.product.id) {
+        found = true;
+        return { ...props.product, quantity: itemQuantity };
+      } else return cartProduct;
+    });
+    if (found === false) {
+      cartTemp.push({ ...props.product, quantity: itemQuantity });
+    }
+    props.setCart(cartTemp);
+    console.log(cartTemp);
+  };
+
   return (
     <div className="productCard">
       <Image
@@ -56,7 +72,9 @@ const ProductCard = (props) => {
           +
         </span>
       </div>
-      <button className="addToCartBtn">Add to Cart</button>
+      <button className="addToCartBtn" onClick={addItemToCart}>
+        Add to Cart
+      </button>
     </div>
   );
 };

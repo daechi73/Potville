@@ -6,14 +6,20 @@ import Footer from "./components/Footer";
 
 function App() {
   const [dataFetch, setDataFetch] = useState(false);
+  const [cart, setCart] = useState([]);
   const dataFetchSwitch = () => {
     setDataFetch(!dataFetch);
   };
   console.log("renderingAPP");
   return (
     <>
-      <Header dataFetchSwitch={dataFetchSwitch} />
-      <Content dataFetchSwitch={dataFetchSwitch} dataFetch={dataFetch} />
+      <Header dataFetchSwitch={dataFetchSwitch} cart={cart} />
+      <Content
+        dataFetchSwitch={dataFetchSwitch}
+        dataFetch={dataFetch}
+        cart={cart}
+        setCart={setCart}
+      />
       <Footer />
     </>
   );

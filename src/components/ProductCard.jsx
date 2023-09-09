@@ -23,13 +23,6 @@ const ProductCard = (props) => {
     return reviewStars;
   };
 
-  const itemQuantityAdjuster = (e) => {
-    if (e.target.textContent === "+") setItemQuantity(itemQuantity + 1);
-    if (e.target.textContent === "-")
-      if (itemQuantity === 0) return;
-      else setItemQuantity(itemQuantity - 1);
-  };
-
   const addItemToCart = () => {
     if (itemQuantity === 0) return alert("Cannot add 0 quantity of this item");
     let found = false;
@@ -71,7 +64,7 @@ const ProductCard = (props) => {
       </div>
       <QuantityCtrl
         itemQuantity={itemQuantity}
-        itemQuantityAdjuster={itemQuantityAdjuster}
+        setItemQuantity={setItemQuantity}
       />
 
       <button className="addToCartBtn" onClick={addItemToCart}>

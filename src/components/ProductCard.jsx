@@ -1,6 +1,7 @@
 import "../styles/ProductCard.css";
 import { useState } from "react";
 import Image from "./Image";
+import QuantityCtrl from "./QuantityCtrl";
 
 const ProductCard = (props) => {
   //console.log(props.product);
@@ -57,9 +58,7 @@ const ProductCard = (props) => {
         name={props.product.title}
       />
       <div className="productCard-infos">
-        {" "}
         <div className="productCard-name productCard-info">
-          {" "}
           {props.product.title}
         </div>
         <div className="productCard-price productCard-info">
@@ -70,15 +69,11 @@ const ProductCard = (props) => {
         </div>
         {reviewStars()}
       </div>
-      <div className="quantityContainer">
-        <span className="decrementQuan" onClick={itemQuantityAdjuster}>
-          -
-        </span>
-        <span className="quantity">{itemQuantity}</span>
-        <span className="incrementQuan" onClick={itemQuantityAdjuster}>
-          +
-        </span>
-      </div>
+      <QuantityCtrl
+        itemQuantity={itemQuantity}
+        itemQuantityAdjuster={itemQuantityAdjuster}
+      />
+
       <button className="addToCartBtn" onClick={addItemToCart}>
         Add to Cart
       </button>

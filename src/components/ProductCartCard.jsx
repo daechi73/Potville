@@ -1,7 +1,10 @@
 import Image from "./Image";
+import QuantityCtrl from "./QuantityCtrl";
 import "../styles/ProductCartCard.css";
+import { useState } from "react";
 
 const ProductCartCard = (props) => {
+  const [itemQuantity, setItemQuantity] = useState(props.product.quantity);
   return (
     <>
       <div className={"productCartCard " + props.product.title}>
@@ -17,6 +20,10 @@ const ProductCartCard = (props) => {
           <div className="productCard-price productCard-info">
             Price: ${props.product.price}
           </div>
+        </div>
+        <div className="cart-quantity">
+          Quantity:
+          <QuantityCtrl itemQuantity={itemQuantity} />
         </div>
       </div>
     </>

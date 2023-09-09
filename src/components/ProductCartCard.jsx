@@ -23,7 +23,14 @@ const ProductCartCard = (props) => {
         </div>
         <div className="cart-quantity">
           Quantity:
-          <QuantityCtrl itemQuantity={itemQuantity} />
+          <QuantityCtrl
+            itemQuantity={itemQuantity}
+            setItemQuantity={setItemQuantity}
+            productCartCard={true}
+            cart={props.cart}
+            setCart={props.setCart}
+            product={props.product}
+          />
         </div>
       </div>
     </>

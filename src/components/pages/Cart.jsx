@@ -1,13 +1,25 @@
+import "../../styles/Cart.css";
+
 import ProductCartCard from "../ProductCartCard";
 
 const Cart = (props) => {
   console.log(props.cart);
-  const renderCart = () => {
+  const renderItemsCart = () => {
     return props.cart.map((product) => (
-      <ProductCartCard key={product.id} product={product} />
+      <ProductCartCard
+        key={product.id}
+        product={product}
+        cart={props.cart}
+        setCart={props.setCart}
+      />
     ));
   };
-  return <>{renderCart()}</>;
+  return (
+    <div className="cart">
+      <div className="items">{renderItemsCart()}</div>
+      <div className="invoice">ja</div>
+    </div>
+  );
 };
 
 export default Cart;

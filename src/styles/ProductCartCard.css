@@ -1,0 +1,9 @@
+.cart-card-img {
+  width: 150px;
+  height: 150px;
+}
+.productCartCard {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+}

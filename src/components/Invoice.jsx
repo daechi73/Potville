@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Invoice.css";
 
 const Invoice = (props) => {
-  console.log(props.cart);
+  //console.log(props.cart);
   let subTotal = 0;
   const displayCartInfo = () => {
     return props.cart.map((item) => {

@@ -3,7 +3,7 @@ import "../../styles/Shop.css";
 import { Link } from "react-router-dom";
 
 const Shop = (props) => {
-  console.log("rendering Shop");
+  //console.log("rendering Shop");
   return (
     <>
       <section className="shop">

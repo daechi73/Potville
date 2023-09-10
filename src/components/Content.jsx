@@ -50,7 +50,7 @@ const Content = (props) => {
         });
     })();
   }, [props.dataFetch]);
-  console.log("renderingContent");
+  //console.log("renderingContent");
 
   return (
     <>

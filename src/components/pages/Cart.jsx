@@ -14,10 +14,16 @@ const Cart = (props) => {
     ));
   };
   return (
-    <div className="cart">
-      <div className="items">{renderItemsCart()}</div>
-      <Invoice cart={props.cart} />
-    </div>
+    <>
+      {props.cart.length !== 0 ? (
+        <div className="cart">
+          <div className="items">{renderItemsCart()}</div>
+          <Invoice cart={props.cart} />
+        </div>
+      ) : (
+        <div className="noCart">Cart empty! Go Shop!</div>
+      )}
+    </>
   );
 };
 

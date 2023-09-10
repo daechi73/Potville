@@ -35,9 +35,14 @@ li {
 .productList {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   gap: 80px;
   background-color: white;
-  min-height: 100%;
   padding: 50px;
   justify-content: center;
+}
+.shop-errorMsg {
+  color: red;
+  font-size: 30px;
+  font-weight: 500;
 }

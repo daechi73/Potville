@@ -15,7 +15,11 @@ const Home = (props) => {
           <summary className="home-quote">
             Where Urban style comes alive
           </summary>
-          <Link className="shopBtn" to="/shop" onClick={props.dataFetchSwitch}>
+          <Link
+            className="shopBtn"
+            to="/Potville/shop"
+            onClick={props.dataFetchSwitch}
+          >
             Shop
           </Link>
         </section>

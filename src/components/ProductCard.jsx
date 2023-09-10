@@ -40,7 +40,7 @@ const ProductCard = (props) => {
     }
     setItemQuantity(0);
     props.setCart(cartTemp);
-    console.log(cartTemp);
+    //console.log(cartTemp);
   };
 
   return (

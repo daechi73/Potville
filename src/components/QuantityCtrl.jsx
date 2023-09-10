@@ -5,8 +5,7 @@ const QuantityCtrl = (props) => {
     let newItemQuantity;
     if (e.target.textContent === "+") newItemQuantity = props.itemQuantity + 1;
     else newItemQuantity = props.itemQuantity - 1;
-    if (newItemQuantity === 0)
-      return alert("Cannot add 0 quantity of this item");
+    if (newItemQuantity === -1) return;
     let cartTemp = props.cart.map((cartProduct) => {
       if (cartProduct.id === props.product.id) {
         return {
@@ -16,7 +15,6 @@ const QuantityCtrl = (props) => {
       } else return cartProduct;
     });
     props.setCart(cartTemp);
-    console.log(cartTemp);
   };
   const itemQuantityAdjuster = (e) => {
     if (e.target.textContent === "+")

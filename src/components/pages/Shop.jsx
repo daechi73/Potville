@@ -12,31 +12,43 @@ const Shop = (props) => {
           <ul className="product-category">
             <li>
               <span>&#10551;</span>
-              <Link to="/shop" onClick={props.dataFetchSwitch}>
+              <Link to="/Potville/shop" onClick={props.dataFetchSwitch}>
                 All Products
               </Link>
             </li>
             <li>
               <span>&#10551;</span>
-              <Link to="/shop/electronics" onClick={props.dataFetchSwitch}>
+              <Link
+                to="/Potville/shop/electronics"
+                onClick={props.dataFetchSwitch}
+              >
                 Electronics
               </Link>
             </li>
             <li>
               <span>&#10551;</span>
-              <Link to="/shop/jewelery" onClick={props.dataFetchSwitch}>
+              <Link
+                to="/Potville/shop/jewelery"
+                onClick={props.dataFetchSwitch}
+              >
                 Jewelery
               </Link>
             </li>
             <li>
               <span>&#10551;</span>
-              <Link to="/shop/men's clothing" onClick={props.dataFetchSwitch}>
+              <Link
+                to="/Potville/shop/men's clothing"
+                onClick={props.dataFetchSwitch}
+              >
                 Men's Clothing
               </Link>
             </li>
             <li>
               <span>&#10551;</span>
-              <Link to="/shop/women's clothing" onClick={props.dataFetchSwitch}>
+              <Link
+                to="/Potville/shop/women's clothing"
+                onClick={props.dataFetchSwitch}
+              >
                 Women's Clothing
               </Link>
             </li>

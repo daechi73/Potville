@@ -8,18 +8,18 @@ const Header = (props) => {
         <div className="header-name">Javui</div>
         <ul className="navLinks">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/Potville">Home</Link>
           </li>
           <li>
-            <Link to="/shop" onClick={props.dataFetchSwitch}>
+            <Link to="/Potville/shop" onClick={props.dataFetchSwitch}>
               Shop
             </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/Potville/about">About</Link>
           </li>
           <li>
-            <Link to="/cart">
+            <Link to="/Potville/cart">
               <i className="fa fa-shopping-cart"></i>
             </Link>
             <span className="cartQuantity">{props.cart.length}</span>

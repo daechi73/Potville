@@ -7,12 +7,12 @@ import ErrorPage from "./components/pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Potville",
     element: <App />,
     errorElement: <ErrorPage />,
   },
-  { path: "/:name", element: <App /> },
-  { path: "/shop/:name", element: <App /> },
+  { path: "/Potville/:name", element: <App /> },
+  { path: "/Potville/shop/:name", element: <App /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

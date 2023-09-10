@@ -4,6 +4,17 @@
 }
 .productCartCard {
   display: flex;
-  gap: 30px;
+  justify-content: space-around;
   padding: 40px 40px 0 40px;
+  width: 100%;
+}
+
+.cart-img {
+  width: 25%;
+}
+.cart-infos {
+  width: 50%;
+}
+.cart-quantity {
+  width: 15%;
 }

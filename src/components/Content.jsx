@@ -9,6 +9,7 @@ const Content = (props) => {
   window.scrollTo(0, 0);
   const { name } = useParams();
   const [productList, setProductList] = useState([]);
+  const [error, setError] = useState(null);
 
   const renderShop = () => {
     const namesToPass = [
@@ -41,13 +42,19 @@ const Content = (props) => {
   useEffect(() => {
     const dataFetch = (() => {
       const url = getURL();
-      fetch("https://fakestoreapi.com/products/" + url)
-        .then((res) => res.json())
+      fetch("https://fakestoreapi.com/products/" + url, { mode: "cors" })
+        .then((res) => {
+          if (res.status >= 400) {
+            throw new Error("Server Error");
+          }
+          return res.json();
+        })
         .then((json) => {
           const dataList = json;
           //console.log(dataList);
           setProductList(dataList);
-        });
+        })
+        .catch((error) => setError(error));
     })();
   }, [props.dataFetch]);
   //console.log("renderingContent");
@@ -60,6 +67,7 @@ const Content = (props) => {
           dataFetchSwitch={props.dataFetchSwitch}
           cart={props.cart}
           setCart={props.setCart}
+          error={error}
         />
       ) : name === "about" ? (
         <About />

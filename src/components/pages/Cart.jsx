@@ -13,6 +13,8 @@ const Cart = (props) => {
       />
     ));
   };
+
+  if (props.error) return <p>A network error was encountered</p>;
   return (
     <>
       {props.cart.length !== 0 ? (

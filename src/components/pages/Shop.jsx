@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Shop = (props) => {
   //console.log("rendering Shop");
+
   return (
     <>
       <section className="shop">
@@ -55,17 +56,21 @@ const Shop = (props) => {
           </ul>
         </nav>
         <section className="productList">
-          {props.productList.map((product) => {
-            return (
-              <ProductCard
-                key={product.id}
-                productId={product.id}
-                product={product}
-                cart={props.cart}
-                setCart={props.setCart}
-              />
-            );
-          })}
+          {props.error ? (
+            <p className="shop-errorMsg">A network error was encountered</p>
+          ) : (
+            props.productList.map((product) => {
+              return (
+                <ProductCard
+                  key={product.id}
+                  productId={product.id}
+                  product={product}
+                  cart={props.cart}
+                  setCart={props.setCart}
+                />
+              );
+            })
+          )}
         </section>
       </section>
     </>

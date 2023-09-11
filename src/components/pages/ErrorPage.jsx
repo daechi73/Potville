@@ -1,5 +1,7 @@
+import "../../styles/ErrorPage.css";
+
 const ErrorPage = () => {
-  return <>Page doesn't exist</>;
+  return <div className="errorPage">Page doesn't exist</div>;
 };
 
 export default ErrorPage;

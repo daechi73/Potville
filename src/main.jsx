@@ -12,7 +12,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   { path: "/Potville/:name", element: <App /> },
-  { path: "/Potville/shop/:name", element: <App /> },
+  {
+    path: "/Potville/shop/:name",
+    element: <App />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

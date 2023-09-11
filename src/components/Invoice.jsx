@@ -4,12 +4,13 @@ import "../styles/Invoice.css";
 const Invoice = (props) => {
   //console.log(props.cart);
   let subTotal = 0;
+
   const displayCartInfo = () => {
     return props.cart.map((item) => {
       const itemTotal = Math.round(item.price * item.quantity * 100) / 100;
       subTotal += itemTotal;
       return (
-        <>
+        <div key={"c" + item.id} className="invoice-list-container">
           {item.quantity ? (
             <li key={item.id} className="invoice-list">
               <div className="invoice-item-info id">{item.id}</div>
@@ -21,7 +22,7 @@ const Invoice = (props) => {
           ) : (
             ""
           )}
-        </>
+        </div>
       );
     });
   };

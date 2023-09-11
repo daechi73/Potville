@@ -4,12 +4,14 @@ import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
+import Loading from "./Loading";
 
 const Content = (props) => {
   window.scrollTo(0, 0);
   const { name } = useParams();
   const [productList, setProductList] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const renderShop = () => {
     const namesToPass = [
@@ -40,25 +42,30 @@ const Content = (props) => {
   };
 
   useEffect(() => {
-    const dataFetch = (() => {
-      const url = getURL();
-      fetch("https://fakestoreapi.com/products/" + url, { mode: "cors" })
-        .then((res) => {
-          if (res.status >= 400) {
-            throw new Error("Server Error");
-          }
-          return res.json();
-        })
-        .then((json) => {
-          const dataList = json;
-          //console.log(dataList);
-          setProductList(dataList);
-        })
-        .catch((error) => setError(error));
-    })();
+    setTimeout(() => {
+      const dataFetch = (() => {
+        const url = getURL();
+        fetch("https://fakestoreapi.com/products/" + url, { mode: "cors" })
+          .then((res) => {
+            if (res.status >= 400) {
+              throw new Error("Server Error");
+            }
+            return res.json();
+          })
+          .then((json) => {
+            const dataList = json;
+            //console.log(dataList);
+            setProductList(dataList);
+          })
+          .catch((error) => setError(error))
+          .finally(() => setLoading(false));
+      })();
+    }, 2000);
   }, [props.dataFetch]);
+
   //console.log("renderingContent");
 
+  if (loading) return <Loading />;
   return (
     <>
       {renderShop() ? (

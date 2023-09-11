@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
+import ErrorPage from "./pages/ErrorPage";
 import Loading from "./Loading";
 
 const Content = (props) => {
@@ -64,8 +65,10 @@ const Content = (props) => {
   }, [props.dataFetch]);
 
   //console.log("renderingContent");
+  console.log(name);
 
   if (loading) return <Loading />;
+  if (!name) return <Home dataFetchSwitch={props.dataFetchSwitch} />;
   return (
     <>
       {renderShop() ? (
@@ -81,7 +84,7 @@ const Content = (props) => {
       ) : name === "cart" ? (
         <Cart cart={props.cart} setCart={props.setCart} />
       ) : (
-        <Home dataFetchSwitch={props.dataFetchSwitch} />
+        <ErrorPage />
       )}
     </>
   );

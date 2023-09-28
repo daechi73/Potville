@@ -9,7 +9,7 @@
 .inspiring {
   display: flex;
   flex-direction: column;
-  height: 700px;
+  height: 100vh;
   justify-content: center;
   align-items: center;
   gap: 50px;

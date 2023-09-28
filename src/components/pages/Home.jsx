@@ -1,7 +1,5 @@
 import Image from "../Image";
-import img from "../../assets/img.avif";
-import img4 from "../../assets/img4.jpg";
-import img2Cut from "../../assets/img2Cut.jpg";
+import imgCut2 from "../../assets/imgCut2.jpg";
 import imgCut from "../../assets/imgCut.jpg";
 import pb from "../../assets/PB.jpg";
 import "../../styles/Home.css";
@@ -9,7 +7,9 @@ import { Link } from "react-router-dom";
 
 const Home = (props) => {
   let backgroundImg;
-  window.innerWidth < 400 ? (backgroundImg = pb) : (backgroundImg = imgCut);
+  window.innerWidth < 400
+    ? (backgroundImg = imgCut2)
+    : (backgroundImg = imgCut);
   return (
     <>
       <main className="home">

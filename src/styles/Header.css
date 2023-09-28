@@ -43,3 +43,29 @@
   border-radius: 50%;
   background-color: black;
 }
+@media (max-width: 960px) {
+  .header {
+    padding: 20px 10px;
+  }
+  .header-name {
+    font-size: 40px;
+    padding-left: 60px;
+  }
+  .navLinks {
+    padding-right: 50px;
+    gap: 2rem;
+  }
+}
+@media (max-width: 650px) {
+  .header {
+    padding: 10px 0;
+  }
+  .header-name {
+    font-size: 30px;
+    padding-left: 40px;
+  }
+  .navLinks {
+    padding-right: 40px;
+    gap: 1rem;
+  }
+}
